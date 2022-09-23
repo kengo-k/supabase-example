@@ -1,0 +1,9 @@
+version: "3"
+services:
+  dev:
+    build:
+      context: docker/dev
+    container_name: sample-todo-app-with-next-and-supabase
+    tty: true
+    volumes:
+      - "./volumes:/home/node/volumes"
