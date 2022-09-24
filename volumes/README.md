@@ -11,3 +11,9 @@ yarn add @heroicons/react @supabase/supabase-js react-query zustand
 yarn add -D tailwindcss postcss autoprefixer
 yarn add -D prettier prettier-plugin-tailwindcss
 ```
+
+##### tailwindの初期設定
+
+```
+npx tailwindcss init -p
+```
