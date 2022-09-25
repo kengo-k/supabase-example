@@ -1,11 +1,21 @@
 import { GetStaticProps, NextPage } from 'next'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Layout } from '../components/Layout'
 import { Notice, Task } from '../types/types'
 import { supabase } from '../utils/supabase'
 
-// サーバーサイドで実行される処理。
-// 静的ページを構築するために使用するデータを取得する
+// ビルド時に実行される処理。
+// 静的ページを構築するためのデータを取得する
 // getStaticPropsという名前で関数を定義することでNextから自動的に呼び出される(はず)
+//
+// yarn buildでビルドを実行するとルートディレクトリ下にある.nextディレクトリに
+// 静的なHTMLが生成されていることを確認できる。
+//
+// yarn build後にyarn startすることでproduction環境の動作を確認できる。
+// ssgページに複数回アクセスしても何も出力されないことを確認できる
+// (console.log処理はビルド時に一度だけ行われているため)
+// ※開発時(yarn dev)は利便性のためにSSRと同じ挙動をする
 export const getStaticProps: GetStaticProps = async () => {
   console.log('getStaticProps/ssg invoked')
   const { data: tasks } = await supabase
