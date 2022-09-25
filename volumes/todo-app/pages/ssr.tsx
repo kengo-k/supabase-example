@@ -1,24 +1,18 @@
-import { GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Layout } from '../components/Layout'
 import { Notice, Task } from '../types/types'
 import { supabase } from '../utils/supabase'
 
-// ビルド時に実行される処理。
-// 静的ページを構築するためのデータを取得する。
-// getStaticPropsという名前で関数を定義することでNextから自動的に呼び出される。
+// サーバーサイドで実行される処理。
+// ページにアクセスするたびにサーバーでHTMLが生成されてクライアントに返される。
+// getServerSidePropsという名前で関数を定義することでNextから自動的に呼び出される。
 // この名前で定義しなければならない。そうでない場合はビルドエラーになる。
 //
-// yarn buildでビルドを実行するとルートディレクトリ下にある.nextディレクトリに
-// 静的なHTMLが生成されていることを確認できる。
-//
-// yarn build後にyarn startすることでproduction環境の動作を確認できる。
-// ssgページに複数回アクセスしても何も出力されないことを確認できる
-// (console.log処理はビルド時に一度だけ行われているため)
-// ※開発時(yarn dev)は利便性のためにSSRと同じ挙動をするので注意
-export const getStaticProps: GetStaticProps = async () => {
-  console.log('getStaticProps/ssg invoked')
+// ページをリロードするたびにサーバーのコンソールにログが出力されることを確認できる。
+export const getServerSideProps: GetServerSideProps = async () => {
+  console.log('getServerSideProps/ssr invoked')
   const { data: tasks } = await supabase
     .from('todos')
     .select('*')
@@ -37,12 +31,11 @@ type StaticProps = {
   notices: Notice[]
 }
 
-// getStaticPropsが返した値が引数のpropsとなって返される
-const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
+const Ssr: NextPage<StaticProps> = ({ tasks, notices }) => {
   const router = useRouter()
   return (
-    <Layout title="SSG">
-      <p className="mb-3 text-blue-500">SSG</p>
+    <Layout title="SSR">
+      <p className="mb-3 text-pink-500">SSR</p>
       <ul className="mb-3">
         {tasks.map((task) => {
           return (
@@ -61,13 +54,20 @@ const Ssg: NextPage<StaticProps> = ({ tasks, notices }) => {
           )
         })}
       </ul>
-      <Link href="/ssr" prefetch={false}>
-        <a className="my-3 text-xs">Link to ssr</a>
+      <Link href="/ssg" prefetch={false}>
+        <a className="my-3 text-xs">Link to ssg</a>
       </Link>
-      <button className="mb-3 text-xs" onClick={() => router.push('/ssr')}>
-        Route to ssr
+      <Link href="/isr" prefetch={false}>
+        <a className="my-3 text-xs">Link to isr</a>
+      </Link>
+      <button className="mb-3 text-xs" onClick={() => router.push('/ssg')}>
+        Route to ssg
+      </button>
+      <button className="mb-3 text-xs" onClick={() => router.push('/isr')}>
+        Route to isr
       </button>
     </Layout>
   )
 }
-export default Ssg
+
+export default Ssr
