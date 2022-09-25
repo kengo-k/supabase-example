@@ -5,6 +5,8 @@ import { Layout } from '../components/Layout'
 import { Notice, Task } from '../types/types'
 import { supabase } from '../utils/supabase'
 
+// SSG: Static Site Generation
+//
 // ビルド時に実行される処理。
 // 静的ページを構築するためのデータを取得する。
 // getStaticPropsという名前で関数を定義することでNextから自動的に呼び出される。

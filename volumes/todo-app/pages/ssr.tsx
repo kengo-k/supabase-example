@@ -5,6 +5,8 @@ import { Layout } from '../components/Layout'
 import { Notice, Task } from '../types/types'
 import { supabase } from '../utils/supabase'
 
+// SSR: Server Side Rendering
+//
 // サーバーサイドで実行される処理。
 // ページにアクセスするたびにサーバーでHTMLが生成されてクライアントに返される。
 // getServerSidePropsという名前で関数を定義することでNextから自動的に呼び出される。
