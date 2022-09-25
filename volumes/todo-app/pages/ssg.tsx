@@ -6,8 +6,9 @@ import { Notice, Task } from '../types/types'
 import { supabase } from '../utils/supabase'
 
 // ビルド時に実行される処理。
-// 静的ページを構築するためのデータを取得する
-// getStaticPropsという名前で関数を定義することでNextから自動的に呼び出される(はず)
+// 静的ページを構築するためのデータを取得する。
+// getStaticPropsという名前で関数を定義することでNextから自動的に呼び出される。
+// この名前で定義しなければならない。そうでない場合はビルドエラーになる。
 //
 // yarn buildでビルドを実行するとルートディレクトリ下にある.nextディレクトリに
 // 静的なHTMLが生成されていることを確認できる。
@@ -15,7 +16,7 @@ import { supabase } from '../utils/supabase'
 // yarn build後にyarn startすることでproduction環境の動作を確認できる。
 // ssgページに複数回アクセスしても何も出力されないことを確認できる
 // (console.log処理はビルド時に一度だけ行われているため)
-// ※開発時(yarn dev)は利便性のためにSSRと同じ挙動をする
+// ※開発時(yarn dev)は利便性のためにSSRと同じ挙動をするので注意
 export const getStaticProps: GetStaticProps = async () => {
   console.log('getStaticProps/ssg invoked')
   const { data: tasks } = await supabase
