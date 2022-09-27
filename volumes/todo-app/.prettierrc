@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@types/(.*)$",
+    "^@utils/(.*)$",
+    "^@hooks/(.*)$",
+    "^@heroicons/(.*)$",
+    "^@components/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true
+}
