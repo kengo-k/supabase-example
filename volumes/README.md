@@ -21,6 +21,9 @@ npx tailwindcss init -p
 ##### サポートツールの設定
 
 ```
+# importの順序を並び変えるprettierプラグイン
+yarn add -D @trivago/prettier-plugin-sort-imports
+
 yarn add -D eslint-plugin-unused-imports
 yarn add -D eslint-plugin-import
 ```
