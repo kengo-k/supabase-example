@@ -17,3 +17,10 @@ yarn add -D prettier prettier-plugin-tailwindcss
 ```
 npx tailwindcss init -p
 ```
+
+##### サポートツールの設定
+
+```
+yarn add -D eslint-plugin-unused-imports
+yarn add -D eslint-plugin-import
+```
