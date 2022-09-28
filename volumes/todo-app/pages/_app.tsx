@@ -1,10 +1,12 @@
-import '../styles/globals.css'
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { useRouter } from 'next/router'
-import { supabase } from '../utils/supabase'
-import { useEffect } from 'react'
+
+import { supabase } from '@utils/supabase'
+
+import '../styles/globals.css'
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   switch (metric.name) {

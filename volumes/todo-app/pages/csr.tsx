@@ -1,8 +1,10 @@
 import { NextPage } from 'next'
 import { useEffect, useState } from 'react'
-import { Layout } from '../components/Layout'
+
+import { Layout } from '@components/Layout'
+import { supabase } from '@utils/supabase'
+
 import { Notice, Task } from '../types/types'
-import { supabase } from '../utils/supabase'
 
 // CSR: Client Side Rendering
 //

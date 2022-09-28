@@ -1,9 +1,11 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Layout } from '../components/Layout'
+
+import { Layout } from '@components/Layout'
+import { supabase } from '@utils/supabase'
+
 import { Notice, Task } from '../types/types'
-import { supabase } from '../utils/supabase'
 
 // SSR: Server Side Rendering
 //
