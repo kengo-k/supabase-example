@@ -1,6 +1,6 @@
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
@@ -41,15 +41,15 @@ const queryClient = new QueryClient({
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { push, pathname } = useRouter()
-  const validateSession = async () => {
+  const validateSession = useCallback(async () => {
     const user = supabase.auth.user()
     if (user && pathname === '/') {
       push('/dashboard')
     } else if (!user && pathname !== '/') {
       await push('/')
     }
-  }
-  supabase.auth.onAuthStateChange((event, _) => {
+  }, [pathname, push])
+  supabase.auth.onAuthStateChange((event) => {
     if (event === 'SIGNED_IN' && pathname === '/') {
       push('/dashboard')
     }
@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   })
   useEffect(() => {
     validateSession()
-  }, [])
+  }, [validateSession])
 
   return (
     <QueryClientProvider client={queryClient}>

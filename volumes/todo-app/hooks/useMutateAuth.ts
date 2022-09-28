@@ -18,7 +18,7 @@ export const useMutateAuth = () => {
       }
     },
     {
-      onError: (err: any) => {
+      onError: (err: Error) => {
         alert(err.message)
         reset()
       },
@@ -32,7 +32,7 @@ export const useMutateAuth = () => {
       }
     },
     {
-      onError: (err: any) => {
+      onError: (err: Error) => {
         alert(err.message)
         reset()
       },

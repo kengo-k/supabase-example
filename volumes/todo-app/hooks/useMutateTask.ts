@@ -23,7 +23,7 @@ export const useMutateTask = () => {
         }
         reset()
       },
-      onError: (err: any) => {
+      onError: (err: Error) => {
         alert(err.message)
         reset()
       },
@@ -51,7 +51,7 @@ export const useMutateTask = () => {
         }
         reset()
       },
-      onError: (err: any) => {
+      onError: (err: Error) => {
         alert(err.message)
         reset()
       },
@@ -76,7 +76,7 @@ export const useMutateTask = () => {
         }
         reset()
       },
-      onError: (err: any) => {
+      onError: (err: Error) => {
         alert(err.message)
         reset()
       },

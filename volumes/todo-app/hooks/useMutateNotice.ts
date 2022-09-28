@@ -23,7 +23,7 @@ export const useMutateNotice = () => {
         }
         reset()
       },
-      onError: (err: any) => {
+      onError: (err: Error) => {
         alert(err.message)
         reset()
       },
@@ -53,7 +53,7 @@ export const useMutateNotice = () => {
         }
         reset()
       },
-      onError: (err: any) => {
+      onError: (err: Error) => {
         alert(err.message)
         reset()
       },
@@ -81,7 +81,7 @@ export const useMutateNotice = () => {
         }
         reset()
       },
-      onError: (err: any) => {
+      onError: (err: Error) => {
         alert(err.message)
         reset()
       },
