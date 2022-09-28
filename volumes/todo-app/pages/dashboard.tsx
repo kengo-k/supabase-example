@@ -1,15 +1,16 @@
 import { NextPage } from 'next'
 
-import { Layout } from '@components/Layout'
-import { NoticeForm } from '@components/NoticeForm'
-import { NoticeList } from '@components/NoticeList'
-import { TaskList } from '@components/TaskList'
-import { TaskForm } from '@components/Taskform'
 import {
   LogoutIcon,
   StatusOnlineIcon,
   DocumentTextIcon,
 } from '@heroicons/react/solid'
+
+import { Layout } from '@components/Layout'
+import { NoticeForm } from '@components/NoticeForm'
+import { NoticeList } from '@components/NoticeList'
+import { TaskList } from '@components/TaskList'
+import { TaskForm } from '@components/Taskform'
 import { supabase } from '@utils/supabase'
 
 const Dashboard: NextPage = () => {

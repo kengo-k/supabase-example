@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import { PencilAltIcon, TrashIcon } from '@heroicons/react/solid'
+
 import { useMutateTask } from '@hooks/useMutateTask'
 import useStore from '@store'
 import { Task } from '@utils/types'
