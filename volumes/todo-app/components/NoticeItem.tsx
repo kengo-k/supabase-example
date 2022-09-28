@@ -4,8 +4,7 @@ import { PencilAltIcon, TrashIcon } from '@heroicons/react/solid'
 import { useMutateNotice } from '@hooks/useMutateNotice'
 import useStore from '@store'
 import { supabase } from '@utils/supabase'
-
-import { Notice } from '../types/types'
+import { Notice } from '@utils/types'
 
 export const NoticeItem: FC<Omit<Notice, 'created_at'>> = ({
   id,

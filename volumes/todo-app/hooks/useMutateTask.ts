@@ -1,7 +1,8 @@
-import { useQueryClient, useMutation } from 'react-query'
-import useStore from '../store'
-import { EditedTask, Task, Notice } from '../types/types'
-import { supabase } from '../utils/supabase'
+import { useMutation, useQueryClient } from 'react-query'
+
+import useStore from '@store'
+import { supabase } from '@utils/supabase'
+import { EditedTask, Task } from '@utils/types'
 
 export const useMutateTask = () => {
   const queryClient = useQueryClient()

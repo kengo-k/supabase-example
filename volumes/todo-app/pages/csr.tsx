@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react'
 
 import { Layout } from '@components/Layout'
 import { supabase } from '@utils/supabase'
-
-import { Notice, Task } from '../types/types'
+import { Notice, Task } from '@utils/types'
 
 // CSR: Client Side Rendering
 //

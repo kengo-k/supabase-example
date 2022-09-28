@@ -3,8 +3,7 @@ import { FC } from 'react'
 import { PencilAltIcon, TrashIcon } from '@heroicons/react/solid'
 import { useMutateTask } from '@hooks/useMutateTask'
 import useStore from '@store'
-
-import { Task } from '../types/types'
+import { Task } from '@utils/types'
 
 export const TaskItem: FC<Omit<Task, 'created_at' | 'user_id'>> = ({
   id,

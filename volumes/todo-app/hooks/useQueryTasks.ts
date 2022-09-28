@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query'
-import { Task } from '../types/types'
-import { supabase } from '../utils/supabase'
+
+import { supabase } from '@utils/supabase'
+import { Task } from '@utils/types'
 
 export const useQueryTasks = () => {
   const getTasks = async () => {

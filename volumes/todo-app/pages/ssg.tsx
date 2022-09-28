@@ -4,8 +4,7 @@ import { useRouter } from 'next/router'
 
 import { Layout } from '@components/Layout'
 import { supabase } from '@utils/supabase'
-
-import { Notice, Task } from '../types/types'
+import { Notice, Task } from '@utils/types'
 
 // SSG: Static Site Generation
 //

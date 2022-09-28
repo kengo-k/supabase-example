@@ -4,9 +4,8 @@ import { useEffect } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
+import '@styles/globals.css'
 import { supabase } from '@utils/supabase'
-
-import '../styles/globals.css'
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   switch (metric.name) {
