@@ -24,6 +24,12 @@ npx tailwindcss init -p
 # importの順序を並び変えるprettierプラグイン
 yarn add -D @trivago/prettier-plugin-sort-imports
 
+# 不要importを表示するeslintプラグイン
 yarn add -D eslint-plugin-unused-imports
+
+# typescript用のeslintプラグイン
+yarn add -D @typescript-eslint/eslint-plugin
+
+#これ使ってるっけ？あとで確認していらないなら消す
 yarn add -D eslint-plugin-import
 ```
