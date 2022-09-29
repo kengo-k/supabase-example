@@ -19,7 +19,7 @@ export const NoticeList: FC = () => {
           <NoticeItem
             key={notice.id}
             id={notice.id}
-            content={notice.title}
+            content={notice.content}
             user_id={notice.user_id}
           />
         )
