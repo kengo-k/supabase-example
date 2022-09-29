@@ -71,7 +71,7 @@ export const useMutateTask = () => {
         if (prevTodos) {
           queryClient.setQueryData(
             ['todos'],
-            prevTodos.filter((task) => task.id === args)
+            prevTodos.filter((task) => task.id !== args)
           )
         }
         reset()

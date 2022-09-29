@@ -76,7 +76,7 @@ export const useMutateNotice = () => {
         if (prevNotices) {
           queryClient.setQueryData(
             ['notices'],
-            prevNotices.filter((notice) => notice.id === values)
+            prevNotices.filter((notice) => notice.id !== values)
           )
         }
         reset()
