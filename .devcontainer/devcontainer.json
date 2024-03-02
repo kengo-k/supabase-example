@@ -1,0 +1,9 @@
+{
+    "name": "supabase-example",
+    "image": "node:16.20.2",
+    "appPort": ["3000:3000"],
+    "workspaceFolder": "/app",
+    "mounts": ["source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"],
+    "remoteUser": "node"
+  }
+  
