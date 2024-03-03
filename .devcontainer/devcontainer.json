@@ -4,6 +4,13 @@
     "appPort": ["3000:3000"],
     "workspaceFolder": "/app",
     "mounts": ["source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"],
-    "remoteUser": "node"
+    "remoteUser": "node",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "wix.vscode-import-cost"
+        ]
+      }
+    }
   }
   
