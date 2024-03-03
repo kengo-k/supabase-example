@@ -7,7 +7,13 @@
     "remoteUser": "node",
     "customizations": {
       "vscode": {
+        "settings": {
+          "editor.formatOnSave": true,
+          "prettier.requireConfig": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
         "extensions": [
+          "esbenp.prettier-vscode",
           "wix.vscode-import-cost"
         ]
       }
