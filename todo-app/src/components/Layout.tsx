@@ -1,6 +1,6 @@
-import { FC, ReactNode } from 'react'
-import Head from 'next/head'
 import { CheckBadgeIcon } from '@heroicons/react/24/solid'
+import Head from 'next/head'
+import { FC, ReactNode } from 'react'
 
 type Title = {
   title: string
